@@ -13,10 +13,18 @@ function getSongInfo(searchTerm) {
     limit: 20
   }, function (error, response) {
     if (error) {
-      // liri.printError(error[0]);
-      console.error(error);
+      liri.printError(error);
     } else {
-      console.dir(response.tracks.items[0]);
+      let items = response.tracks.items;
+      items.forEach(function (item) {
+        console.log(
+          '\n' +
+          'Artist(s): ' + item.artists[0].name + '\n' +
+          'Song Title: ' + item.name + '\n' +
+          'Preview: ' + item.preview_url + '\n' +
+          'Album: ' + item.album.name + '\n'
+        );
+      });
     }
   });
 }

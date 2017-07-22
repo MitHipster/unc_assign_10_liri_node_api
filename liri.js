@@ -3,7 +3,12 @@
 const twitter = require('./js/twitter.js');
 const spotify = require('./js/spotify.js');
 let source = process.argv[2]; // Source for search request
-let searchTerm = process.argv[3]; // Search term used for source (search term not used twitter)
+let searchTerm;
+if (process.argv[3]) {
+  searchTerm = process.argv[3];
+} else {
+  searchTerm = 'The Sign';
+} // Search term used for source (search term not used twitter)
 
 // Function to console log error messages
 function printError(error) {
@@ -15,8 +20,6 @@ switch (source) {
     twitter.getTweets();
     break;
   case 'spotify-this-song':
-    console.log(source);
-    console.log(searchTerm);
     spotify.getSongInfo(searchTerm);
     break;
   default:
