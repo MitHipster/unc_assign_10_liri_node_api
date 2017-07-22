@@ -1,4 +1,5 @@
 /*jslint esversion: 6, browser: true*/
+
 const Twitter = require('twitter');
 const liri = require('../liri.js');
 const keys = require('./keys.js');
