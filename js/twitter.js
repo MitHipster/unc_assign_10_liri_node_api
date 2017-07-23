@@ -18,16 +18,21 @@ function getTweets() {
     }
     console.log(
       '\n' +
-      liri.tweet('Screen Name: ') + liri.bold(tweets[0].user.screen_name)
+      liri.bold.cyan('Screen Name: ') + liri.bold(tweets[0].user.screen_name)
     );
     let dateTime = '';
     tweets.forEach(function (tweet) {
       dateTime = moment(tweet.created_at, "ddd MMM D HH:mm:ss ZZ YYYY").format('dddd, MMMM Do YYYY, h:mmA');
-      console.log(
+      let screenResults =
         '\n' +
-        liri.tweet('Tweet: ') + liri.bold(tweet.text) + '\n' +
-        liri.tweet('Posted: ') + dateTime + '\n'
-      );
+        liri.bold.cyan('Tweet: ') + liri.bold(tweet.text) + '\n' +
+        liri.bold.cyan('Posted: ') + dateTime + '\n';
+      console.log(screenResults);
+      let fileResults =
+        '\n' +
+        'Tweet: ' + tweet.text + '\n' +
+        'Posted: ' + dateTime + '\n';
+      liri.logResults(fileResults);
     });
   });
 }

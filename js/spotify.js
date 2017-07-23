@@ -17,13 +17,20 @@ function getSongInfo(searchTerm) {
     }
     let items = response.tracks.items;
     items.forEach(function (item) {
-      console.log(
+      let screenResults =
         '\n' +
-        liri.song('Artist(s): ') + liri.bold(item.artists[0].name) + '\n' +
-        liri.song('Song Title: ') + liri.under(item.name) + '\n' +
-        liri.song('Preview: ') + item.preview_url + '\n' +
-        liri.song('Album: ') + item.album.name + '\n'
-      );
+        liri.bold.green('Artist(s): ') + liri.bold(item.artists[0].name) + '\n' +
+        liri.bold.green('Song Title: ') + liri.under(item.name) + '\n' +
+        liri.bold.green('Preview: ') + item.preview_url + '\n' +
+        liri.bold.green('Album: ') + item.album.name + '\n';
+      console.log(screenResults);
+      let fileResults =
+        '\n' +
+        'Artist(s): ' + item.artists[0].name + '\n' +
+        'Song Title: ' + item.name + '\n' +
+        'Preview: ' + item.preview_url + '\n' +
+        'Album: ' + item.album.name + '\n';
+      liri.logResults(fileResults);
     });
   });
 }
