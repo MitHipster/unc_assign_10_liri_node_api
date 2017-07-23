@@ -17,7 +17,18 @@ function getMovieInfo(searchTerm) {
     if (error) {
       liri.printError(error);
     } else {
-      console.log(body);
+      // console.log(body);
+      console.log(
+        '\n' +
+        liri.movie('Title: ') + liri.bold(body.Title) + '\n' +
+        liri.movie('Year: ') + body.Year + '\n' +
+        liri.movie('IMDB Rating: ') + body.imdbRating + '\n' +
+        liri.movie('Rotten Tomatoes Rating: ') + body.Ratings[1].Value + '\n' +
+        liri.movie('Country: ') + body.Country + '\n' +
+        liri.movie('Language: ') + body.Language + '\n' +
+        liri.movie('Plot: ') + body.Plot + '\n' +
+        liri.movie('Actors: ') + body.Actors + '\n'
+      );
     }
   });
 }
