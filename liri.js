@@ -3,6 +3,7 @@
 const twitter = require('./js/twitter.js');
 const spotify = require('./js/spotify.js');
 const omdb = require('./js/omdb.js');
+const file = require('./js/file.js');
 const chalk = require('chalk');
 let source = process.argv[2]; // Source for search request
 let searchTerm = process.argv.slice(3).join(' '); // Search term used for source (search term not used for twitter)
@@ -17,18 +18,26 @@ function printError(error) {
   console.error(error.message);
 }
 
-switch (source) {
-  case 'my-tweets':
-    twitter.getTweets();
-    break;
-  case 'spotify-this-song':
-    spotify.getSongInfo(searchTerm);
-    break;
-  case 'movie-this':
-    omdb.getMovieInfo(searchTerm);
-    break;
-  default:
-    console.log('Not a valid source. Please try again.');
+function runProgram(src, term) {
+  switch (src) {
+    case 'my-tweets':
+      twitter.getTweets();
+      break;
+    case 'spotify-this-song':
+      spotify.getSongInfo(term);
+      break;
+    case 'movie-this':
+      omdb.getMovieInfo(term);
+      break;
+    case 'do-what-it-says':
+      file.getTextInfo();
+      break;
+    default:
+      console.log('Not a valid command. Please try again.');
+  }
 }
 
+runProgram(source, searchTerm);
+
 module.exports.printError = printError;
+module.exports.runProgram = runProgram;

@@ -13,19 +13,18 @@ function getSongInfo(searchTerm) {
     limit: 20
   }, function (error, response) {
     if (error) {
-      liri.printError(error);
-    } else {
-      let items = response.tracks.items;
-      items.forEach(function (item) {
-        console.log(
-          '\n' +
-          liri.song('Artist(s): ') + liri.bold(item.artists[0].name) + '\n' +
-          liri.song('Song Title: ') + liri.under(item.name) + '\n' +
-          liri.song('Preview: ') + item.preview_url + '\n' +
-          liri.song('Album: ') + item.album.name + '\n'
-        );
-      });
+      return liri.printError(error);
     }
+    let items = response.tracks.items;
+    items.forEach(function (item) {
+      console.log(
+        '\n' +
+        liri.song('Artist(s): ') + liri.bold(item.artists[0].name) + '\n' +
+        liri.song('Song Title: ') + liri.under(item.name) + '\n' +
+        liri.song('Preview: ') + item.preview_url + '\n' +
+        liri.song('Album: ') + item.album.name + '\n'
+      );
+    });
   });
 }
 
