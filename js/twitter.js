@@ -1,6 +1,7 @@
 /*jslint esversion: 6, browser: true*/
 
 const Twitter = require('twitter');
+const moment = require('moment');
 const liri = require('../liri.js');
 const keys = require('./keys.js');
 const params = {
@@ -17,14 +18,15 @@ function getTweets() {
     } else {
       console.log(
         '\n' +
-        'Screen Name: ' + tweets[0].user.screen_name
+        liri.tweet('Screen Name: ') + liri.bold(tweets[0].user.screen_name)
       );
-
+      let dateTime = '';
       tweets.forEach(function (tweet) {
+        dateTime = moment(tweet.created_at, "ddd MMM D HH:mm:ss ZZ YYYY").format('dddd, MMMM Do YYYY, h:mmA');
         console.log(
           '\n' +
-          'Tweet: ' + tweet.text + '\n' +
-          'Posted: ' + tweet.created_at + '\n'
+          liri.tweet('Tweet: ') + liri.bold(tweet.text) + '\n' +
+          liri.tweet('Posted: ') + dateTime + '\n'
         );
       });
     }

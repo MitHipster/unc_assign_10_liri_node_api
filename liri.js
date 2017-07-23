@@ -2,13 +2,14 @@
 
 const twitter = require('./js/twitter.js');
 const spotify = require('./js/spotify.js');
+const chalk = require('chalk');
 let source = process.argv[2]; // Source for search request
-let searchTerm;
-if (process.argv[3]) {
-  searchTerm = process.argv[3];
-} else {
-  searchTerm = 'The Sign';
-} // Search term used for source (search term not used twitter)
+let searchTerm = process.argv.slice(3).join(' '); // Search term used for source (search term not used for twitter)
+exports.tweet = chalk.cyan.bold; // Styling variables
+exports.song = chalk.green.bold;
+exports.movie = chalk.red.bold;
+exports.bold = chalk.bold;
+exports.under = chalk.underline;
 
 // Function to console log error messages
 function printError(error) {
