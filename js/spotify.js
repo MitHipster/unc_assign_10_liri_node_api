@@ -9,7 +9,7 @@ let request = new Spotify(keys.spotifyKeys);
 function getSongInfo(searchTerm) {
   request.search({
     type: 'track',
-    query: searchTerm,
+    query: (searchTerm ? searchTerm : 'The Sign'),
     limit: 20
   }, function (error, response) {
     if (error) {

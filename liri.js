@@ -2,6 +2,7 @@
 
 const twitter = require('./js/twitter.js');
 const spotify = require('./js/spotify.js');
+const omdb = require('./js/omdb.js');
 const chalk = require('chalk');
 let source = process.argv[2]; // Source for search request
 let searchTerm = process.argv.slice(3).join(' '); // Search term used for source (search term not used for twitter)
@@ -22,6 +23,9 @@ switch (source) {
     break;
   case 'spotify-this-song':
     spotify.getSongInfo(searchTerm);
+    break;
+  case 'movie-this':
+    omdb.getMovieInfo(searchTerm);
     break;
   default:
     console.log('Not a valid source. Please try again.');

@@ -11,3 +11,5 @@ exports.spotifyKeys = {
   id: '75dcf1660ea04c6ba07aaafb9b5735a5',
   secret: '2fc8e45d1a734e4cafe128b18d0c6f39'
 };
+
+exports.omdbKey = '40e9cece';
