@@ -4,31 +4,59 @@ const twitter = require('./js/twitter.js');
 const spotify = require('./js/spotify.js');
 const omdb = require('./js/omdb.js');
 const file = require('./js/file.js');
+const inquirer = require("inquirer");
 const fs = require('fs');
 const chalk = require('chalk');
 const moment = require('moment');
-let source = process.argv[2]; // Source for search request
-let searchTerm = process.argv.slice(3).join(' '); // Search term used for source (search term not used for twitter)
+let command; // Source for search request
+let search; // Search term used for source (search term not used for twitter)
+let commands = [
+  'spotify-this-song',
+  'omdb-this-movie',
+  'show-my-tweets',
+  'do-what-it-says'
+];
 exports.bold = chalk.bold; // Styling variables
 exports.under = chalk.underline;
+
+inquirer.prompt({
+  type: "list",
+  message: "Hello, this is LIRI. How may I help you?",
+  choices: commands,
+  name: "command"
+}).then(function (answer) {
+  command = answer.command;
+  if (commands.indexOf(command) <= 1) {
+    inquirer.prompt({
+      type: "input",
+      message: "Enter search (without quotes)",
+      name: "search"
+    }).then(function (answer) {
+      search = answer.search;
+      runProgram(command, search);
+    });
+  } else {
+    runProgram(command);
+  }
+});
 
 // Function to console log error messages
 function printError(error) {
   console.error(error.message);
 }
 
-function runProgram(src, term) {
-  switch (src) {
-    case 'my-tweets':
-      twitter.getTweets(src);
+function runProgram(cmd, term) {
+  switch (cmd) {
+    case commands[0]:
+      spotify.getSongInfo(cmd, term);
       break;
-    case 'spotify-this-song':
-      spotify.getSongInfo(src, term);
+    case commands[1]:
+      omdb.getMovieInfo(cmd, term);
       break;
-    case 'movie-this':
-      omdb.getMovieInfo(src, term);
+    case commands[2]:
+      twitter.getTweets(cmd);
       break;
-    case 'do-what-it-says':
+    case commands[3]:
       file.getTextInfo();
       break;
     default:
@@ -36,10 +64,10 @@ function runProgram(src, term) {
   }
 }
 
-function searchHeader(src, term) {
+function searchHeader(cmd, term) {
   let searchHeader =
     '\n' +
-    'Command: ' + src + ' | ' +
+    'Command: ' + cmd + ' | ' +
     'Search Term: ' + (term ? term : 'N/A') + ' | ' +
     'Run Time: ' + moment().format('dddd, MMMM Do YYYY, h:mmA ZZ') + '\n';
   logResults(searchHeader);
@@ -52,8 +80,6 @@ function logResults(results) {
     }
   });
 }
-
-runProgram(source, searchTerm);
 
 module.exports.printError = printError;
 module.exports.runProgram = runProgram;
