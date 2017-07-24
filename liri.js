@@ -8,13 +8,14 @@ const inquirer = require("inquirer");
 const fs = require('fs');
 const chalk = require('chalk');
 const moment = require('moment');
-let command; // Source for search request
+let command; // Command used to issue request
 let search; // Search term used for source (search term not used for twitter)
 let commands = [
-  'spotify-this-song',
-  'omdb-this-movie',
+  'spotify-a-song',
+  'omdb-a-movie',
   'show-my-tweets',
-  'do-what-it-says'
+  'run-file-command',
+  'cancel'
 ];
 exports.bold = chalk.bold; // Styling variables
 exports.under = chalk.underline;
@@ -58,6 +59,8 @@ function runProgram(cmd, term) {
       break;
     case commands[3]:
       file.getTextInfo();
+      break;
+    case commands[4]:
       break;
     default:
       console.log('Not a valid command. Please try again.');

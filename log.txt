@@ -1,4 +1,56 @@
-Command: omdb-this-movie | Search Term: the godfather | Run Time: Monday, July 24th 2017, 1:13PM -0400
+Command: spotify-a-song | Search Term: Red Hill Mining Town | Run Time: Monday, July 24th 2017, 5:56PM -0400
+
+Artist(s): U2
+Song Title: Red Hill Mining Town
+Preview: null
+Album: The Joshua Tree (Super Deluxe)
+
+Artist(s): U2
+Song Title: Red Hill Mining Town - Remastered 2007
+Preview: null
+Album: The Joshua Tree
+
+Artist(s): U2
+Song Title: Red Hill Mining Town - Steve Lillywhite 2017 Mix
+Preview: null
+Album: The Joshua Tree (Super Deluxe)
+
+Artist(s): U2
+Song Title: Red Hill Mining Town
+Preview: null
+Album: The Joshua Tree (Deluxe)
+
+Artist(s): Ben Hall
+Song Title: Red Hill Mining Town
+Preview: https://p.scdn.co/mp3-preview/a7207f9088e38f645b237f097df86ae4ac74f2cb?cid=75dcf1660ea04c6ba07aaafb9b5735a5
+Album: Solo Country Guitar: Ben Hall Performs U2's the Joshua Tree
+
+Artist(s): Vitamin String Quartet
+Song Title: Red Hill Mining Town
+Preview: https://p.scdn.co/mp3-preview/a71e84317b8a5279b8f7ffdf9d53f9608ba8b4c0?cid=75dcf1660ea04c6ba07aaafb9b5735a5
+Album: The String Quartet Tribute To U2: The Joshua Tree
+
+Artist(s): Owen Goward
+Song Title: Red Hill Mining Town
+Preview: https://p.scdn.co/mp3-preview/cb3f04389a0f546779803d1dab69329e71a62a69?cid=75dcf1660ea04c6ba07aaafb9b5735a5
+Album: The Joshua Keys
+
+Artist(s): Earl Pickens & Family
+Song Title: Red Hill Mining Town
+Preview: https://p.scdn.co/mp3-preview/87dcb8ee6a4ea8c90166f6f32da142fe843a6b32?cid=75dcf1660ea04c6ba07aaafb9b5735a5
+Album: The Joshua Tree
+
+Artist(s): Rock Crusade
+Song Title: Red Hill Mining Town
+Preview: https://p.scdn.co/mp3-preview/554a9db4a8ab1fa3c00d1a8fbd46f16377b39785?cid=75dcf1660ea04c6ba07aaafb9b5735a5
+Album: Essential Rock Jams
+
+Artist(s): J Scott Bergman
+Song Title: Red Hill Mining Town
+Preview: https://p.scdn.co/mp3-preview/7feb838e4abbcb821804f63df192bc155a410319?cid=75dcf1660ea04c6ba07aaafb9b5735a5
+Album: RE.Covers
+
+Command: omdb-a-movie | Search Term: The Godfather | Run Time: Monday, July 24th 2017, 5:56PM -0400
 
 Title: The Godfather
 Year: 1972
@@ -9,59 +61,7 @@ Language: English, Italian, Latin
 Plot: The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.
 Actors: Marlon Brando, Al Pacino, James Caan, Richard S. Castellano
 
-Command: spotify-this-song | Search Term: thunderstruck | Run Time: Monday, July 24th 2017, 1:13PM -0400
-
-Artist(s): AC/DC
-Song Title: Thunderstruck
-Preview: https://p.scdn.co/mp3-preview/3885f542871846183fefbd009577c95f5f46b0af?cid=75dcf1660ea04c6ba07aaafb9b5735a5
-Album: The Razors Edge
-
-Artist(s): AC/DC
-Song Title: Thunderstruck
-Preview: https://p.scdn.co/mp3-preview/2d9544a444030dbf6f506c4c9bd5ae5708bc59f8?cid=75dcf1660ea04c6ba07aaafb9b5735a5
-Album: Iron Man 2
-
-Artist(s): Owl City
-Song Title: Thunderstruck
-Preview: null
-Album: Mobile Orchestra
-
-Artist(s): 2Cellos
-Song Title: Thunderstruck
-Preview: https://p.scdn.co/mp3-preview/64fde2b28267c3303bf800fe61016e0a239d2824?cid=75dcf1660ea04c6ba07aaafb9b5735a5
-Album: Celloverse
-
-Artist(s): 2Cellos
-Song Title: Thunderstruck
-Preview: https://p.scdn.co/mp3-preview/5aecb06fc54967973ccfe1b178e98d5befb49c11?cid=75dcf1660ea04c6ba07aaafb9b5735a5
-Album: Thunderstruck
-
-Artist(s): Steve ´n´ Seagulls
-Song Title: Thunderstruck
-Preview: null
-Album: Farm Machine
-
-Artist(s): The Fanatics
-Song Title: Thunderstruck
-Preview: https://p.scdn.co/mp3-preview/ef53b16594d0cc06ccb4617ed2207fd6eba25fd2?cid=75dcf1660ea04c6ba07aaafb9b5735a5
-Album: Ultimate Sports Anthems - Stadium Classics
-
-Artist(s): AC/DC
-Song Title: Thunderstruck - Live at River Plate
-Preview: https://p.scdn.co/mp3-preview/85b09339b584e8493b7a0b48086e9c68be4502d2?cid=75dcf1660ea04c6ba07aaafb9b5735a5
-Album: Live at River Plate
-
-Artist(s): AC/DC
-Song Title: Thunderstruck - Live
-Preview: https://p.scdn.co/mp3-preview/f610e4a673c9531c11a6014a10d12b45043da43f?cid=75dcf1660ea04c6ba07aaafb9b5735a5
-Album: Live
-
-Artist(s): 2Cellos
-Song Title: Thunderstruck (Intro)
-Preview: https://p.scdn.co/mp3-preview/9a9604e3fa7dbf19b28c5982e2ab4d4b64576646?cid=75dcf1660ea04c6ba07aaafb9b5735a5
-Album: Celloverse
-
-Command: show-my-tweets | Search Term: N/A | Run Time: Monday, July 24th 2017, 1:13PM -0400
+Command: show-my-tweets | Search Term: N/A | Run Time: Monday, July 24th 2017, 5:57PM -0400
 
 Tweet: Got inquirer to work! My project is done and submitted.
 Posted: Monday, July 24th 2017, 1:09PM
@@ -123,7 +123,7 @@ Posted: Friday, July 21st 2017, 1:56PM
 Tweet: Time to start my LIRI Node API homework assignment.
 Posted: Friday, July 21st 2017, 12:40PM
 
-Command: spotify-this-song | Search Term: "I Want it That Way" | Run Time: Monday, July 24th 2017, 1:14PM -0400
+Command: spotify-a-song | Search Term: "I Want it That Way" | Run Time: Monday, July 24th 2017, 5:57PM -0400
 
 Artist(s): Backstreet Boys
 Song Title: I Want It That Way

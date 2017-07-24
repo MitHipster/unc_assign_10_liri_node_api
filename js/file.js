@@ -10,7 +10,7 @@ function getTextInfo() {
     }
     data = data.split(',');
     let command = data[0].trim();
-    if (command === 'do-what-it-says') {
+    if (command === 'run-file-command') {
       return console.log('What are you trying to do...create an infinite loop?!');
     }
     let search = (data[1] ? data[1].trim() : '');
