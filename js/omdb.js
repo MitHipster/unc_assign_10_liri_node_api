@@ -6,9 +6,9 @@ const keys = require('./keys.js');
 
 const url = 'http://www.omdbapi.com/?';
 
-function getMovieInfo(searchTerm) {
+function getMovieInfo(source, searchTerm) {
   let qs = {
-    t: (searchTerm ? searchTerm : 'Mr. Nobody'),
+    t: (searchTerm ? searchTerm : searchTerm = 'Mr. Nobody'),
     plot: 'short',
     apikey: keys.omdbKey
   };
@@ -38,6 +38,7 @@ function getMovieInfo(searchTerm) {
       'Language: ' + body.Language + '\n' +
       'Plot: ' + body.Plot + '\n' +
       'Actors: ' + body.Actors + '\n';
+    liri.searchHeader(source, searchTerm);
     liri.logResults(fileResults);
   });
 }

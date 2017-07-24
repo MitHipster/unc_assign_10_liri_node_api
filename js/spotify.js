@@ -6,15 +6,16 @@ const keys = require('./keys.js');
 
 let request = new Spotify(keys.spotifyKeys);
 
-function getSongInfo(searchTerm) {
+function getSongInfo(source, searchTerm) {
   request.search({
     type: 'track',
-    query: (searchTerm ? searchTerm : 'The Sign'),
-    limit: 20
+    query: (searchTerm ? searchTerm : searchTerm = 'The Sign'),
+    limit: 10
   }, function (error, response) {
     if (error) {
       return liri.printError(error);
     }
+    liri.searchHeader(source, searchTerm);
     let items = response.tracks.items;
     items.forEach(function (item) {
       let screenResults =

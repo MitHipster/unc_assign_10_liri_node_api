@@ -6,10 +6,11 @@ const omdb = require('./js/omdb.js');
 const file = require('./js/file.js');
 const fs = require('fs');
 const chalk = require('chalk');
+const moment = require('moment');
 let source = process.argv[2]; // Source for search request
 let searchTerm = process.argv.slice(3).join(' '); // Search term used for source (search term not used for twitter)
 exports.bold = chalk.bold; // Styling variables
-exports.underline = chalk.underline;
+exports.under = chalk.underline;
 
 // Function to console log error messages
 function printError(error) {
@@ -19,13 +20,13 @@ function printError(error) {
 function runProgram(src, term) {
   switch (src) {
     case 'my-tweets':
-      twitter.getTweets();
+      twitter.getTweets(src);
       break;
     case 'spotify-this-song':
-      spotify.getSongInfo(term);
+      spotify.getSongInfo(src, term);
       break;
     case 'movie-this':
-      omdb.getMovieInfo(term);
+      omdb.getMovieInfo(src, term);
       break;
     case 'do-what-it-says':
       file.getTextInfo();
@@ -33,6 +34,15 @@ function runProgram(src, term) {
     default:
       console.log('Not a valid command. Please try again.');
   }
+}
+
+function searchHeader(src, term) {
+  let searchHeader =
+    '\n' +
+    'Command: ' + src + ' | ' +
+    'Search Term: ' + (term ? term : 'N/A') + ' | ' +
+    'Run Time: ' + moment().format('dddd, MMMM Do YYYY, h:mmA ZZ') + '\n';
+  logResults(searchHeader);
 }
 
 function logResults(results) {
@@ -47,4 +57,5 @@ runProgram(source, searchTerm);
 
 module.exports.printError = printError;
 module.exports.runProgram = runProgram;
+module.exports.searchHeader = searchHeader;
 module.exports.logResults = logResults;

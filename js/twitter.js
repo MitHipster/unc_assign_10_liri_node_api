@@ -11,7 +11,7 @@ const params = {
 
 let request = new Twitter(keys.twitterKeys);
 
-function getTweets() {
+function getTweets(source) {
   request.get('statuses/user_timeline', params, function (error, tweets, response) {
     if (error) {
       return liri.printError(error[0]);
@@ -20,6 +20,7 @@ function getTweets() {
       '\n' +
       liri.bold.cyan('Screen Name: ') + liri.bold(tweets[0].user.screen_name)
     );
+    liri.searchHeader(source);
     let dateTime = '';
     tweets.forEach(function (tweet) {
       dateTime = moment(tweet.created_at, "ddd MMM D HH:mm:ss ZZ YYYY").format('dddd, MMMM Do YYYY, h:mmA');
