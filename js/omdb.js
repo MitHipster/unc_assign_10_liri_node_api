@@ -6,9 +6,9 @@ const keys = require('./keys.js');
 
 const url = 'http://www.omdbapi.com/?';
 
-function getMovieInfo(source, searchTerm) {
+function getMovieInfo(command, search) {
   let qs = {
-    t: (searchTerm ? searchTerm : searchTerm = 'Mr. Nobody'),
+    t: (search ? search : search = 'Mr. Nobody'),
     plot: 'short',
     apikey: keys.omdbKey
   };
@@ -20,7 +20,7 @@ function getMovieInfo(source, searchTerm) {
     let screenResults =
       '\n' +
       liri.bold.red('Title: ') + liri.bold(body.Title) + '\n' +
-      liri.bold.red('Year: ') + body.Year + '\n' +
+      liri.bold.red('Year: ') + liri.under(body.Year) + '\n' +
       liri.bold.red('IMDB Rating: ') + body.imdbRating + '\n' +
       liri.bold.red('Rotten Tomatoes Rating: ') + body.Ratings[1].Value + '\n' +
       liri.bold.red('Country: ') + body.Country + '\n' +
@@ -38,7 +38,7 @@ function getMovieInfo(source, searchTerm) {
       'Language: ' + body.Language + '\n' +
       'Plot: ' + body.Plot + '\n' +
       'Actors: ' + body.Actors + '\n';
-    liri.searchHeader(source, searchTerm);
+    liri.searchHeader(command, search);
     liri.logResults(fileResults);
   });
 }

@@ -9,13 +9,13 @@ function getTextInfo() {
       return liri.printError(error);
     }
     data = data.split(',');
-    let source = data[0].trim();
-    if (source === 'do-what-it-says') {
+    let command = data[0].trim();
+    if (command === 'do-what-it-says') {
       return console.log('What are you trying to do...create an infinite loop?!');
     }
-    let searchTerm = (data[1] ? data[1].trim() : '');
-    console.log(source, searchTerm);
-    liri.runProgram(source, searchTerm);
+    let search = (data[1] ? data[1].trim() : '');
+    console.log(command, search);
+    liri.runProgram(command, search);
   });
 }
 
