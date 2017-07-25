@@ -1,5 +1,6 @@
 /*jslint esversion: 6, browser: true*/
 
+// JS file to store and export API keys for GET requests
 exports.twitterKeys = {
   consumer_key: 'qWYKNipibIXPkwiTbjxnzttcJ',
   consumer_secret: 'C6n2VSYwp4VW81njoCHB0Y26yGxEcKgBv6puAdJRHkK27Ds2b7',
