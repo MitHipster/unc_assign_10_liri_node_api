@@ -21,13 +21,18 @@ function getMovieInfo(command, search) {
     if (error) {
       return liri.printError(error);
     }
+    // If error key exists, log no movie found
+    if (body.Error) {
+      return console.error(body.Error);
+    }
     // Format movie object for screen logging
     let screenResults =
       '\n' +
       liri.bold.red('Title: ') + liri.bold(body.Title) + '\n' +
       liri.bold.red('Year: ') + liri.under(body.Year) + '\n' +
       liri.bold.red('IMDB Rating: ') + body.imdbRating + '\n' +
-      liri.bold.red('Rotten Tomatoes Rating: ') + body.Ratings[1].Value + '\n' +
+      // Check if Rotten Tomatoes info is present
+      liri.bold.red('Rotten Tomatoes Rating: ') + (body.Ratings[1] ? body.Ratings[1].Value : '--') + '\n' +
       liri.bold.red('Country: ') + body.Country + '\n' +
       liri.bold.red('Language: ') + body.Language + '\n' +
       liri.bold.red('Plot: ') + body.Plot + '\n' +
@@ -39,7 +44,7 @@ function getMovieInfo(command, search) {
       'Title: ' + body.Title + '\n' +
       'Year: ' + body.Year + '\n' +
       'IMDB Rating: ' + body.imdbRating + '\n' +
-      'Rotten Tomatoes Rating: ' + body.Ratings[1].Value + '\n' +
+      'Rotten Tomatoes Rating: ' + (body.Ratings[1] ? body.Ratings[1].Value : '--') + '\n' +
       'Country: ' + body.Country + '\n' +
       'Language: ' + body.Language + '\n' +
       'Plot: ' + body.Plot + '\n' +

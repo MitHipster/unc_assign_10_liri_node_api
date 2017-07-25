@@ -36,7 +36,7 @@ inquirer.prompt({
   if (commands.indexOf(command) <= 1) {
     inquirer.prompt({
       type: "input",
-      message: "Enter search (without quotes)",
+      message: "Enter search (without quotes):",
       name: "search"
     }).then(function (answer) {
       search = answer.search;

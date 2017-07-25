@@ -20,6 +20,10 @@ function getSongInfo(command, search) {
     if (error) {
       return liri.printError(error);
     }
+    // If total is zero, log no song found
+    if (response.tracks.total === 0) {
+      console.log('Song not found!');
+    }
     // Call Liri function to append header to log file
     liri.searchHeader(command, search);
     let items = response.tracks.items;
