@@ -1,5 +1,8 @@
 /*jslint esversion: 6, browser: true*/
 
+// Require dotenv to create environment variables
+require('dotenv').config();
+
 // variables to include modules from other JS files
 const twitter = require('./js/twitter.js');
 const spotify = require('./js/spotify.js');

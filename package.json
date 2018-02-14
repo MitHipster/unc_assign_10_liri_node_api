@@ -18,6 +18,7 @@
   "homepage": "https://github.com/MitHipster/unc_assign_10_liri_node_api#readme",
   "dependencies": {
     "chalk": "^2.0.1",
+    "dotenv": "^5.0.0",
     "inquirer": "^3.2.1",
     "moment": "^2.18.1",
     "node-spotify-api": "^1.0.5",
